@@ -1,10 +1,11 @@
-//
-//  ViewController.swift
-//  MAPD711_group10_ToDoList
-//
-//  Created by javon maxwell on 2021-11-16.
-//
-
+/**
+ MAPD714        assignment 2
+ group 10
+ Members
+ Matthew Maxwell
+ Divyesh Solanki
+ poojan Patel
+ **/
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource , UITableViewDelegate
