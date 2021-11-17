@@ -8,23 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource , UITableViewDelegate
-{
-   //outlet declaration for tableview
-   // @IBOutlet var tableView:UITableView!
+
+{   //array of tasks
+    private let taskList = ["head", "shoulder", "knees", "toes"]
     
-    //array of key value pairs (DICTIONARIES)
-    private let tasks =
-    [
-        ["Task": "wash hair", "Date": "12/20/2022"],
-        ["Task": "read a book", "Date": "04/20/2021"],
-        ["Task": "purchase game ticket", "Date": "12/20/2021"],
-        ["Task": "hair appointment", "Date": "12/12/2022"],
-        ["Task": "Spa appointment", "Date": "11/20/2021"],
-        ["Task": "match day", "Date": ""],
-    ]
-    private let tak = ["head", "shoulder", "knees", "toes"]
-    //table identifier
-        let tasksTableIdentifier = "tasksTable"
+    // String table identifier
+    let tasksTableIdentifier = "tasksTable"
 
     override func viewDidLoad()
     {
@@ -36,8 +25,10 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
     //overide function for table length via item count
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return tak.count
+        return taskList.count
     }
+    
+    
     //overide function
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -50,10 +41,10 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
         }
      
         //adds tasks to be displayed
-        cell?.textLabel?.text = tak[indexPath.row]
+        cell?.textLabel?.text = taskList[indexPath.row]
         
         //adds date as sudtext
-
+        cell?.detailTextLabel?.text = "24/04/2002"
         
         //adds image to be displayed in cell
         let editImage = UIImage(named: "edit")
@@ -63,10 +54,18 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
         //adds switch to be displayed in cell
         let taskCompleted = UISwitch(frame: .zero)
         taskCompleted.setOn(false, animated: true)
+        
         //taskCompleted.tag = indexPath.row // for detect which row switch Changed
         //taskCompleted.addTarget(self, action: tasks(self.switchChanged(_:)), for: .valueChanged)
         cell?.accessoryView = taskCompleted
+        
+        performSegue(withIdentifier: "navigate", sender: taskList[indexPath.row])
         return cell!
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let detailsView = segue.destination as! DetailViewController
+        detailsView.taskString = sender as! String
     }
 
 }
