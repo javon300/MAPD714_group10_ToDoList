@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
     }
     
     
-    //overide function
+    //function renders array on app start up
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         //instantiaate reusable cell
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
             cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: tasksTableIdentifier)
         }
      
-        //adds tasks to be displayed
+        //adds task title to be displayed
         cell?.textLabel?.text = taskList[indexPath.row]
         
         //adds date as sudtext
@@ -50,18 +50,23 @@ class ViewController: UIViewController, UITableViewDataSource , UITableViewDeleg
         let editImage = UIImage(named: "edit")
         cell?.imageView?.image = editImage
        
-        
         //adds switch to be displayed in cell
         let taskCompleted = UISwitch(frame: .zero)
         taskCompleted.setOn(false, animated: true)
-        
-        //taskCompleted.tag = indexPath.row // for detect which row switch Changed
-        //taskCompleted.addTarget(self, action: tasks(self.switchChanged(_:)), for: .valueChanged)
         cell?.accessoryView = taskCompleted
         
-        performSegue(withIdentifier: "navigate", sender: taskList[indexPath.row])
         return cell!
     }
+    
+    //what happens when row is selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        //animates a deselction of selected item then navigates to second page
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "navigate", sender: taskList[indexPath.row])
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let detailsView = segue.destination as! DetailViewController
