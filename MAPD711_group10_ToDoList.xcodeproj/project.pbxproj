@@ -25,6 +25,8 @@
 		CF57C05A275468C500AE8914 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = CF57C059275468C500AE8914 /* FirebaseFunctions */; };
 		CF57C05C27546AC700AE8914 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF57C05B27546AC700AE8914 /* GoogleService-Info.plist */; };
 		CF57C05E27546AD800AE8914 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57C05D27546AD800AE8914 /* Task.swift */; };
+		CFB5FDDA276424C900216AEA /* userFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5FDD9276424C900216AEA /* userFirebase.swift */; };
+		CFB5FDDC2764297200216AEA /* userService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5FDDB2764297200216AEA /* userService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		CF4D43862744B26F001FEB99 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CF57C05B27546AC700AE8914 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF57C05D27546AD800AE8914 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CFB5FDD9276424C900216AEA /* userFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userFirebase.swift; sourceTree = "<group>"; };
+		CFB5FDDB2764297200216AEA /* userService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		CF4D436F27448E02001FEB99 /* MAPD711_group10_ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				CFA3430B27643C880089FC4E /* user */,
 				CF4D437027448E02001FEB99 /* AppDelegate.swift */,
 				CF4D437227448E02001FEB99 /* SceneDelegate.swift */,
 				CF4D437427448E02001FEB99 /* ViewController.swift */,
@@ -90,8 +95,17 @@
 				CF4D437E27448E04001FEB99 /* Info.plist */,
 				CF4D43862744B26F001FEB99 /* DetailViewController.swift */,
 				CF57C05D27546AD800AE8914 /* Task.swift */,
+				CFB5FDD9276424C900216AEA /* userFirebase.swift */,
+				CFB5FDDB2764297200216AEA /* userService.swift */,
 			);
 			path = MAPD711_group10_ToDoList;
+			sourceTree = "<group>";
+		};
+		CFA3430B27643C880089FC4E /* user */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = user;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +196,11 @@
 			files = (
 				CF4D437527448E02001FEB99 /* ViewController.swift in Sources */,
 				CF4D437127448E02001FEB99 /* AppDelegate.swift in Sources */,
+				CFB5FDDC2764297200216AEA /* userService.swift in Sources */,
 				CF57C05E27546AD800AE8914 /* Task.swift in Sources */,
 				CF4D437327448E02001FEB99 /* SceneDelegate.swift in Sources */,
 				CF4D43872744B26F001FEB99 /* DetailViewController.swift in Sources */,
+				CFB5FDDA276424C900216AEA /* userFirebase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +349,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MAPD711_group10_ToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -360,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MAPD711_group10_ToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

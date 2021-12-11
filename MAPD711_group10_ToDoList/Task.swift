@@ -1,8 +1,7 @@
 //
 //  Task.swift
 //  MAPD711_group10_ToDoList
-//
-//  Created by javon maxwell on 2021-11-28.
+
 //
 import UIKit
 
